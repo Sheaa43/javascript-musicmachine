@@ -62,7 +62,8 @@ $(document).ready(function () {
     // Assign functions to the other buttons
     $("#recordButton").click(toggleRecording);
     $("#clearButton").click(clearRecording);
-
+    $("#songOneButton").click(playSongOne);
+    $("#songTwoButton").click(playSongTwo);
 
     function clearRecording() {
         // create a new, empty array
@@ -152,5 +153,18 @@ $(document).ready(function () {
         // use the instrument from the audiosynth library
         // to play the desired note for half a second
         organ.play(note, octave, 0.5);
+    }
+
+    function playSongOne()
+    {
+        var songOne = ["A,5", "D,5", "G,4", "A,5", "A,5", "A,4", "A,4", "C,3", "C,3", "E,3", "B,5"];
+        playRecording(songOne);
+
+    }
+
+    function playSongTwo()
+    {
+        var songTwo = ["D,3", "D,3", "D,3", "C,5", "E,5", "C,5", "C,5", "G,4", "G,4", "F,4", "F,4"];
+        playRecording(songTwo);
     }
 });
